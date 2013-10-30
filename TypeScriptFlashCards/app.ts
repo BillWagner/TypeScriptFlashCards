@@ -7,7 +7,7 @@ window.onload = () => {
     button.type = 'button';
     button.value = "Create New Problem";
     button.onclick = function () {
-        var problem = new AdditionProblem(el);
+        var problem = new MathProblems.AdditionProblem(el);
     };
     el.appendChild(button);
 

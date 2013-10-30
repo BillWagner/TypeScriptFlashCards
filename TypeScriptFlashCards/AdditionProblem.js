@@ -1,31 +1,10 @@
-var AdditionProblem = (function () {
-    function AdditionProblem(element) {
-    }
-    return AdditionProblem;
-})();
-
-// Module
-var Shapes;
-(function (Shapes) {
-    // Class
-    var Point = (function () {
-        // Constructor
-        function Point(x, y) {
-            this.x = x;
-            this.y = y;
+var MathProblems;
+(function (MathProblems) {
+    var AdditionProblem = (function () {
+        function AdditionProblem(element) {
         }
-        // Instance member
-        Point.prototype.getDist = function () {
-            return Math.sqrt(this.x * this.x + this.y * this.y);
-        };
-
-        Point.origin = new Point(0, 0);
-        return Point;
+        return AdditionProblem;
     })();
-    Shapes.Point = Point;
-})(Shapes || (Shapes = {}));
-
-// Local variables
-var p = new Shapes.Point(3, 4);
-var dist = p.getDist();
+    MathProblems.AdditionProblem = AdditionProblem;
+})(MathProblems || (MathProblems = {}));
 //# sourceMappingURL=AdditionProblem.js.map
