@@ -1,9 +1,4 @@
-var AdditionProblem = (function () {
-    function AdditionProblem(element) {
-    }
-    return AdditionProblem;
-})();
-
+/// <reference src="AdditionProblem.ts" />
 window.onload = function () {
     var el = document.getElementById('content');
     var button = document.createElement('input');

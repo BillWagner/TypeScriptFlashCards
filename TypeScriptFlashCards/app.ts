@@ -1,10 +1,5 @@
-class AdditionProblem {
-    element: HTMLElement;
+/// <reference src="AdditionProblem.ts" />
 
-    constructor(element: HTMLElement) {
-    }
-
-}
 
 window.onload = () => {
     var el = document.getElementById('content');

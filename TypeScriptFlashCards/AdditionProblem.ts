@@ -1,3 +1,11 @@
+class AdditionProblem {
+    element: HTMLElement;
+
+    constructor(element: HTMLElement) {
+    }
+
+}
+
 // Interface
 interface IPoint {
     getDist(): number;

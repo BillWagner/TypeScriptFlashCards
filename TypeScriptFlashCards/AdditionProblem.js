@@ -1,3 +1,9 @@
+var AdditionProblem = (function () {
+    function AdditionProblem(element) {
+    }
+    return AdditionProblem;
+})();
+
 // Module
 var Shapes;
 (function (Shapes) {
