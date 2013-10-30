@@ -21,7 +21,12 @@ var AdditionProblem = (function () {
 
 window.onload = function () {
     var el = document.getElementById('content');
-    var greeter = new AdditionProblem(el);
-    greeter.start();
+    var button = document.createElement('input');
+    button.type = 'button';
+    button.value = "Create New Problem";
+    button.onclick = function () {
+        var problem = new AdditionProblem(el);
+    };
+    el.appendChild(button);
 };
 //# sourceMappingURL=app.js.map
