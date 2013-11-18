@@ -1,8 +1,10 @@
+/// <reference path="scripts/typings/jquery/jquery.d.ts" />
+
 module MathProblems {
     export class AdditionProblem {
         element: HTMLElement;
 
-        constructor(element: HTMLElement) {
+        constructor(element: JQuery) {
             var left = Math.floor(Math.random() * 25);
             var right = Math.floor(Math.random() * 25);
             var correctAnswer = left + right;
@@ -27,8 +29,7 @@ module MathProblems {
             paragraph.appendChild(button);
             paragraph.appendChild(msg);
 
-            element.appendChild(paragraph);
+            element.append(paragraph);
         }
-
     }
 }

@@ -1,12 +1,13 @@
+/// <reference path="scripts/typings/jquery/jquery.d.ts" />
 /// <reference src="AdditionProblem.ts" />
-window.onload = function () {
-    var el = document.getElementById('content');
+$(document).ready(function () {
+    var el = $('#content');
     var button = document.createElement('input');
     button.type = 'button';
     button.value = "Create New Problem";
     button.onclick = function () {
         var problem = new MathProblems.AdditionProblem(el);
     };
-    el.appendChild(button);
-};
+    el.append(button);
+});
 //# sourceMappingURL=app.js.map

@@ -1,3 +1,4 @@
+/// <reference path="scripts/typings/jquery/jquery.d.ts" />
 var MathProblems;
 (function (MathProblems) {
     var AdditionProblem = (function () {
@@ -26,7 +27,7 @@ else
             paragraph.appendChild(button);
             paragraph.appendChild(msg);
 
-            element.appendChild(paragraph);
+            element.append(paragraph);
         }
         return AdditionProblem;
     })();
