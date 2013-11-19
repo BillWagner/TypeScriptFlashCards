@@ -2,12 +2,9 @@
 /// <reference src="AdditionProblem.ts" />
 $(document).ready(function () {
     var el = $('#content');
-    var button = document.createElement('input');
-    button.type = 'button';
-    button.value = "Create New Problem";
-    button.onclick = function () {
+    var button = $("<input></input>").val("Create New Problem").attr("type", "button").bind("click", function () {
         var problem = new MathProblems.AdditionProblem(el);
-    };
+    });
     el.append(button);
 });
 //# sourceMappingURL=app.js.map
