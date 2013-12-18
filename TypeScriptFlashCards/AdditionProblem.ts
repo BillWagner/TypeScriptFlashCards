@@ -1,16 +1,22 @@
 /// <reference path="scripts/typings/jquery/jquery.d.ts" />
 
+interface JQuery {
+    tmpl(data: any): JQuery;
+}
+
 module MathProblems {
     export class AdditionProblem {
-        element: HTMLElement;
+        left: number;
+        right: number;
 
         constructor(element: JQuery) {
-            var left = Math.floor(Math.random() * 25);
-            var right = Math.floor(Math.random() * 25);
-            var correctAnswer = left + right;
-
+            this.left = Math.floor(Math.random() * 25);
+            this.right = Math.floor(Math.random() * 25);
+            var correctAnswer = this.left + this.right;
+            $("#AdditionProblemTemplate").tmpl(this).appendTo(element);
+            return;
             var paragraph = document.createElement('p');
-            paragraph.innerHTML = left.toString() + " + " + right.toString() + " = ";
+            paragraph.innerHTML = this.left.toString() + " + " + this.right.toString() + " = ";
 
             var txt = document.createElement('input');
             txt.type = 'text';

@@ -1,5 +1,5 @@
 /// <reference path="scripts/typings/jquery/jquery.d.ts" />
-/// <reference src="AdditionProblem.ts" />
+/// <reference path="AdditionProblem.ts" />
 
 
 $(document).ready(() => {
