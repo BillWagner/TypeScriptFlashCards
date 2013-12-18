@@ -8,34 +8,38 @@ module MathProblems {
     export class AdditionProblem {
         left: number;
         right: number;
+        correctAnswer: number;
+        txt: HTMLInputElement;
+        msg: HTMLSpanElement;
 
         constructor(element: JQuery) {
             this.left = Math.floor(Math.random() * 25);
             this.right = Math.floor(Math.random() * 25);
-            var correctAnswer = this.left + this.right;
-            $("#AdditionProblemTemplate").tmpl(this).appendTo(element);
-            return;
+            this.correctAnswer = this.left + this.right;
             var paragraph = document.createElement('p');
-            paragraph.innerHTML = this.left.toString() + " + " + this.right.toString() + " = ";
+            var renderedProblem = $("#AdditionProblemTemplate").tmpl(this);
+            renderedProblem.appendTo(paragraph);
 
-            var txt = document.createElement('input');
-            txt.type = 'text';
-            paragraph.appendChild(txt);
+            this.txt = document.createElement('input');
+            this.txt.type = 'text';
+            paragraph.appendChild(this.txt);
 
             var button = document.createElement('input');
-            var msg = document.createElement('span');
+            this.msg = document.createElement('span');
             button.type = 'button';
             button.value = "Check Answer";
-            button.onclick = function () {
-                if (parseInt(txt.value) == correctAnswer)
-                    msg.innerHTML = "You are correct";
-                else
-                    msg.innerHTML = "Please try again";
-            };
+            button.onclick = () => this.checkAnswer();
             paragraph.appendChild(button);
-            paragraph.appendChild(msg);
+            paragraph.appendChild(this.msg);
 
             element.append(paragraph);
+        }
+
+        checkAnswer() {
+            if (parseInt(this.txt.value) == this.correctAnswer)
+                this.msg.innerHTML = "You are correct";
+            else
+                this.msg.innerHTML = "Please try again";
         }
     }
 }
