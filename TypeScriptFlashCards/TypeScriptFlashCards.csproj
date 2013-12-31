@@ -33,6 +33,7 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="MathProblem.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="SubtractionProblem.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-2.0.3.min.map" />
