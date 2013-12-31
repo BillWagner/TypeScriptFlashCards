@@ -1,44 +1,27 @@
 /// <reference path="scripts/typings/jquery/jquery.d.ts" />
+/// <reference path="MathProblem.ts" />
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
 
 var MathProblems;
 (function (MathProblems) {
-    var AdditionProblem = (function () {
+    var AdditionProblem = (function (_super) {
+        __extends(AdditionProblem, _super);
         function AdditionProblem(element) {
-            var _this = this;
-            this.tmplate = "${left} + ${right} = ";
+            _super.call(this);
             var left = Math.floor(Math.random() * 25);
             var right = Math.floor(Math.random() * 25);
-            this.correctAnswer = left + right;
-            var paragraph = document.createElement('p');
-            var renderedProblem = $.tmpl(this.tmplate, this);
-            renderedProblem.appendTo(paragraph);
+            var tmplate = "${left} + ${right} = ";
 
-            // not using JQuery here because the rendered problem
-            // is not in the DOM yet.
-            this.txt = document.createElement('input');
-            this.txt.type = 'text';
-            paragraph.appendChild(this.txt);
-
-            var button = document.createElement('input');
-            this.msg = document.createElement('span');
-            button.type = 'button';
-            button.value = "Check Answer";
-            button.onclick = function () {
-                return _this.checkAnswer();
-            };
-            paragraph.appendChild(button);
-            paragraph.appendChild(this.msg);
-
-            element.append(paragraph);
+            var renderedProblem = $.tmpl(tmplate, this);
+            _super.prototype.buildHtml.call(this, element, renderedProblem, left + right);
         }
-        AdditionProblem.prototype.checkAnswer = function () {
-            if (parseInt(this.txt.value) == this.correctAnswer)
-                this.msg.innerHTML = "You are correct";
-            else
-                this.msg.innerHTML = "Please try again";
-        };
         return AdditionProblem;
-    })();
+    })(MathProblems.MathProblem);
     MathProblems.AdditionProblem = AdditionProblem;
 })(MathProblems || (MathProblems = {}));
 //# sourceMappingURL=AdditionProblem.js.map
