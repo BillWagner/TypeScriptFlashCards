@@ -161,6 +161,10 @@ Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 
+#Roslyn artifacts:
+*.sln.ide/
+
+
 # SQL Server files
 App_Data/*.mdf
 App_Data/*.ldf
