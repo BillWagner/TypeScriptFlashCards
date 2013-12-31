@@ -11,15 +11,17 @@ interface JQueryStatic {
 
 module MathProblems {
     export class AdditionProblem extends MathProblem {
+        left: number;
+        right: number;
 
         constructor(element: JQuery) {
             super();
-            var left = Math.floor(Math.random() * 25);
-            var right = Math.floor(Math.random() * 25);
+            this.left = Math.floor(Math.random() * 25);
+            this.right = Math.floor(Math.random() * 25);
             var tmplate = "${left} + ${right} = ";
 
             var renderedProblem = $.tmpl(tmplate, this);
-            super.buildHtml(element, renderedProblem, left+right);
+            super.buildHtml(element, renderedProblem, this.left+this.right);
         }
     }
 }

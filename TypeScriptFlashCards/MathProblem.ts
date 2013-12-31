@@ -6,6 +6,8 @@ module MathProblems {
         txt: HTMLInputElement;
         msg: HTMLSpanElement;
 
+        constructor() { }
+
         buildHtml(element: JQuery, renderedProblem: JQuery, correctAnswer: number) {
             this.correctAnswer = correctAnswer;
 

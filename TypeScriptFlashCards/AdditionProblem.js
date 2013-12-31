@@ -13,12 +13,12 @@ var MathProblems;
         __extends(AdditionProblem, _super);
         function AdditionProblem(element) {
             _super.call(this);
-            var left = Math.floor(Math.random() * 25);
-            var right = Math.floor(Math.random() * 25);
+            this.left = Math.floor(Math.random() * 25);
+            this.right = Math.floor(Math.random() * 25);
             var tmplate = "${left} + ${right} = ";
 
             var renderedProblem = $.tmpl(tmplate, this);
-            _super.prototype.buildHtml.call(this, element, renderedProblem, left + right);
+            _super.prototype.buildHtml.call(this, element, renderedProblem, this.left + this.right);
         }
         return AdditionProblem;
     })(MathProblems.MathProblem);
