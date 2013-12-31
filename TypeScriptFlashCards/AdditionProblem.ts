@@ -4,6 +4,10 @@ interface JQuery {
     tmpl(data: any): JQuery;
 }
 
+interface JQueryStatic {
+    tmpl(tmplate: string, data: any): JQuery;
+}
+
 module MathProblems {
     export class AdditionProblem {
         left: number;
@@ -12,12 +16,14 @@ module MathProblems {
         txt: HTMLInputElement;
         msg: HTMLSpanElement;
 
+        tmplate = "${left} + ${right} = ";
+
         constructor(element: JQuery) {
             this.left = Math.floor(Math.random() * 25);
             this.right = Math.floor(Math.random() * 25);
             this.correctAnswer = this.left + this.right;
             var paragraph = document.createElement('p');
-            var renderedProblem = $("#AdditionProblemTemplate").tmpl(this);
+            var renderedProblem = $.tmpl(this.tmplate, this);
             renderedProblem.appendTo(paragraph);
 
             this.txt = document.createElement('input');
