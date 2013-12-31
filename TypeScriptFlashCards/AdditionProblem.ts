@@ -10,8 +10,6 @@ interface JQueryStatic {
 
 module MathProblems {
     export class AdditionProblem {
-        left: number;
-        right: number;
         correctAnswer: number;
         txt: HTMLInputElement;
         msg: HTMLSpanElement;
@@ -19,13 +17,15 @@ module MathProblems {
         tmplate = "${left} + ${right} = ";
 
         constructor(element: JQuery) {
-            this.left = Math.floor(Math.random() * 25);
-            this.right = Math.floor(Math.random() * 25);
-            this.correctAnswer = this.left + this.right;
+            var left = Math.floor(Math.random() * 25);
+            var right = Math.floor(Math.random() * 25);
+            this.correctAnswer = left + right;
             var paragraph = document.createElement('p');
             var renderedProblem = $.tmpl(this.tmplate, this);
             renderedProblem.appendTo(paragraph);
 
+            // not using JQuery here because the rendered problem 
+            // is not in the DOM yet.
             this.txt = document.createElement('input');
             this.txt.type = 'text';
             paragraph.appendChild(this.txt);

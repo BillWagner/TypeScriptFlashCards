@@ -12,4 +12,4 @@ $(document).ready(() => {
     });
     el.append(button);
 }
-    );
+);
